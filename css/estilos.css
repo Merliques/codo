@@ -30,21 +30,51 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-left:40px;
-        margin-right: 40px;
-        padding: 1.5rem 0;
+        
 }
+
+ul{
+    display: flex;
+    align-items: center;
+}
+li{
+    text-decoration: none;
+    list-style: none;
+    margin-right: 15px;
+    margin-left: 15px;
+    
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+/*logo*/
 
 .logo{
             text-decoration: none;
             color: #ffffff;
             font-weight: 700;
             font-size: 1.2rem;
+            display: flex;
+            align-items: center;
 }
 
 .logo img{
 
     width: 50px;
+    margin: 20px;
+    
+    
 }
+
+.logo i{
+    margin-left: 15px;
+    margin-right: 15px;
+    color: aqua;
+}
+
 
 
