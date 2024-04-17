@@ -18,7 +18,7 @@ body{
 .header{
     background-color:#9f3647;
     color:#ffffff;
-    height: 10vh;
+    height: 100px;
     position:sticky;
     top: 0;
     z-index:10;
@@ -33,18 +33,28 @@ body{
         
 }
 
-ul{
+.menu{
     display: flex;
     align-items: center;
 }
-li{
+.item{
+    
     text-decoration: none;
     list-style: none;
     margin-right: 15px;
     margin-left: 15px;
-    
+    font-weight: 500;
+    font-size: 20px;
+    padding: 20px;
+   
 }
 
+.item :hover{
+    transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 5px;
+    
+}
 a{
     text-decoration: none;
     color: #ffffff;
