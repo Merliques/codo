@@ -15,7 +15,7 @@ body{
 /*header*/
 
 
-.header {
+.header, footer {
     background-color:#9f3647;
     color:#ffffff;
     height: 100px;
@@ -87,9 +87,64 @@ a{
 }
 
 
-footer{
-    background-color:#635e5f;
-    color:#ffffff;
-    height: 100px;
+
+
+
+/*main*/
+
+.portada{
+    height: 90vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.tendencia{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+
+}
+.series{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.tituloSerie{
+   
+}
+
+
+
+.serie{
+    width: 100%;
+    height: 500px;
+   
+}
+
+.imagenSerie{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+
+
+
+/*footer*/
+
+footer{
+    background-color: rgb(44, 42, 42);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
