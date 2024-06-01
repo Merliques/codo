@@ -81,7 +81,7 @@
                   }
                 };
             
-                fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
+                fetch('https://api.themoviedb.org/3/movie/upcoming?language=es-US&page=1', options)
                   .then(response => response.json())
                   .then(data => {
                     const moviesContainer = document.getElementById('movies-container');
@@ -112,32 +112,7 @@
               </script>
 
 
-            <div class="series">
-                <a href="">
-                    <div class="serie">
-                        <img src="./img/3bodyProblem.jpg" alt="" class="imagenSerie">
-                        <div class="tituloSerie">
-                            <h4>El Problema de los 3 Cuerpos</h4>
-                        </div>
-
-                        <img src="./img/rebelMoon2.jpg" alt="" class="imagenSerie">
-                        <div class="tituloSerie">
-                            <h4>Rebel Moon 2</h4>
-                        </div>
-
-                        <img src="./img/robo.jpg" alt="" class="imagenSerie">
-                        <div class="tituloSerie">
-                            <h4>Stool Robo</h4>
-                        </div>
-
-                        <img src="./img/vuelo601.jpg" alt="" class="imagenSerie">
-                        <div class="tituloSerie">
-                            <h4>El Secuestro del vuelo 601</h4>
-                        </div>
-                    </div>
-                </a>
-
-            </div>
+            
             <button class="anterior">Anterior</button>
             <button class="sighiente">Sigiente</button>
         </section>
