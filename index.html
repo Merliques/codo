@@ -67,22 +67,49 @@
         <section class="tendencia">
             <h3>Tendencia de la semana</h3>
 
-            <script>
-            
-            const options = {
-                method: 'GET',
-                headers: {
-                  accept: 'application/json',
-                  Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNzRjN2VmMTYxYjQ3MTA3MTlmMzNjMzk3NTg2YjhmOSIsInN1YiI6IjY2NWE4ODRiZWFlOGVhZTdmZWFmMDhmOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nJIpfjht3fbzKbFw8leU22-l4SrAJLVnTM7OGKXBCio'
-                }
-              };
+            <div class="container" id="movies-container">
+                <h1>Upcoming Movies</h1>
+                <!-- Movies will be injected here by JavaScript -->
+              </div>
               
-              fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
-                .then(response => response.json())
-                .then(response => console.log(response))
-                .catch(err => console.error(err));
-                
-            </script>
+              <script>
+                const options = {
+                  method: 'GET',
+                  headers: {
+                    accept: 'application/json',
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNzRjN2VmMTYxYjQ3MTA3MTlmMzNjMzk3NTg2YjhmOSIsInN1YiI6IjY2NWE4ODRiZWFlOGVhZTdmZWFmMDhmOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.nJIpfjht3fbzKbFw8leU22-l4SrAJLVnTM7OGKXBCio'
+                  }
+                };
+            
+                fetch('https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1', options)
+                  .then(response => response.json())
+                  .then(data => {
+                    const moviesContainer = document.getElementById('movies-container');
+                    data.results.forEach(movie => {
+                      const movieElement = document.createElement('div');
+                      movieElement.classList.add('movie');
+                      
+                      const movieImg = document.createElement('img');
+                      movieImg.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+                      movieElement.appendChild(movieImg);
+                      
+                      const movieInfo = document.createElement('div');
+                      movieInfo.classList.add('movie-info');
+                      
+                      const movieTitle = document.createElement('h2');
+                      movieTitle.textContent = movie.title;
+                      movieInfo.appendChild(movieTitle);
+                      
+                      const movieOverview = document.createElement('p');
+                      movieOverview.textContent = movie.overview;
+                      movieInfo.appendChild(movieOverview);
+                      
+                      movieElement.appendChild(movieInfo);
+                      moviesContainer.appendChild(movieElement);
+                    });
+                  })
+                  .catch(err => console.error(err));
+              </script>
 
 
             <div class="series">
